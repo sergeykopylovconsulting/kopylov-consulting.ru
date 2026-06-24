@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Сергей Копылов | Коммерческий директор | Бизнес-консультант по управлению и продажам</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            color: #0a2540;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #334155;
+            max-width: 720px;
+            margin-bottom: 48px;
+            border-left: 4px solid #2c7da0;
+            padding-left: 24px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .btn-primary {
+            background-color: #1a5d7a;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .btn-primary:hover {
+            background-color: #0e4158;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(26,93,122,0.2);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #1a5d7a;
+            color: #1a5d7a;
+        }
+        .btn-outline:hover {
+            background-color: #eef4fc;
+            transform: translateY(-2px);
+        }
+        /* header */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a5d7a, #2c9baf);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2d3e50;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #1a5d7a;
+        }
+        /* hero */
+        .hero {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e6edf4 100%);
+            border-radius: 0 0 48px 48px;
+            padding: 48px 0 56px;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-badge {
+            background: rgba(26,93,122,0.12);
+            color: #1a5d7a;
+            border-radius: 40px;
+            padding: 6px 18px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: #0a2540;
+            margin-bottom: 20px;
+        }
+        .hero-highlight {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a5d7a;
+            margin-bottom: 20px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 28px;
+            margin: 28px 0;
+            flex-wrap: wrap;
+        }
+        .stat-block {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 28px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+            min-width: 140px;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a5d7a;
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .hero-avatar {
+            flex: 0.6;
+            text-align: center;
+            background: white;
+            border-radius: 40px;
+            padding: 24px 20px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.08);
+        }
+        .hero-avatar i {
+            font-size: 5rem;
+            color: #1a5d7a;
+        }
+        /* ключевые результаты */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .result-card {
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.2s;
+            border: 1px solid #e2edf2;
+        }
+        .result-card i {
+            font-size: 2.2rem;
+            color: #1a5d7a;
+            margin-bottom: 16px;
+        }
+        .result-card h4 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        /* услуги */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 24px;
+            border: 1px solid #e9edf2;
+            transition: 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #cbdde9;
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.05);
+        }
+        .service-icon {
+            background: #eef2fa;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            margin-bottom: 24px;
+        }
+        .service-icon i {
+            font-size: 26px;
+            color: #1a5d7a;
+        }
+        /* опыт работы */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .job-item {
+            border-left: 3px solid #1a5d7a;
+            padding-left: 28px;
+            position: relative;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+        }
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .job-company {
+            font-weight: 600;
+            color: #1a5d7a;
+        }
+        .job-date {
+            color: #4b5563;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .job-desc {
+            margin-top: 12px;
+            color: #334155;
+        }
+        .achievement-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .achievement-badge {
+            background: #eef2ff;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1a5d7a;
+        }
+        .contact-wrapper {
+            background: #f2f6fa;
+            border-radius: 40px;
+            padding: 48px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .contact-detail i {
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #1a5d7a;
+        }
+        .tg-channel {
+            background: #e9f4f0;
+            border-radius: 28px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 32px;
+            border-radius: 32px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #cfdfe9;
+            border-radius: 28px;
+            font-family: 'Inter', sans-serif;
+        }
+        .footer {
+            text-align: center;
+            padding: 32px;
+            border-top: 1px solid #e2e8f0;
+            color: #5b6e8c;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .container { padding: 0 24px; }
+            .hero-content h1 { font-size: 2.3rem; }
+            .section-title { font-size: 1.8rem; }
+            .contact-wrapper { padding: 28px; }
+            section { padding: 56px 0; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">Сергей Копылов</div>
+            <div class="nav-links">
+                <a href="#services">Экспертиза</a>
+                <a href="#experience">Карьера</a>
+                <a href="#results">Результаты</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-chart-line"></i> Коммерческий директор | Бизнес-консультант</span>
+                <h1>Копылов Сергей<br>Управляю ростом. Создаю системы.</h1>
+                <div class="hero-highlight">📈 7,5 млрд ₽ — выручка 2025 при плане 5 млрд</div>
+                <div class="hero-stats">
+                    <div class="stat-block"><div class="stat-number">+32%</div><div class="stat-label">рост 2025 → 2024</div></div>
+                    <div class="stat-block"><div class="stat-number">-75%</div><div class="stat-label">отток клиентов</div></div>
+                    <div class="stat-block"><div class="stat-number">5%</div><div class="stat-label">текучесть персонала</div></div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Связаться</a>
+                    <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> Опыт 11+ лет</a>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <img src="photo.jpeg" alt="Сергей Копылов" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                <p style="font-weight: 700; margin-top: 12px;">Сергей Копылов</p>
+                <p style="font-size: 0.8rem; color: #4a5568;">Регулярный менеджмент · Антикризис · Стратегия продаж</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- КЛЮЧЕВЫЕ РЕЗУЛЬТАТЫ (виджет) -->
+<section id="results">
+    <div class="container">
+        <h2 class="section-title">Ключевые достижения в цифрах</h2>
+        <div class="section-subtitle">Реальные кейсы из моей практики: масштабирование, автоматизация и системные улучшения</div>
+        <div class="results-grid">
+            <div class="result-card"><i class="fas fa-chart-line"></i><h4>7,5 млрд ₽</h4><p>выручка 2025 при плане 5 млрд</p></div>
+            <div class="result-card"><i class="fas fa-chart-simple"></i><h4>+32%</h4><p>прирост выручки (2025 к 2024)</p></div>
+            <div class="result-card"><i class="fas fa-users-slash"></i><h4>-75%</h4><p>сокращение оттока клиентов (350→80)</p></div>
+            <div class="result-card"><i class="fas fa-percent"></i><h4>5%</h4><p>текучесть персонала (было 30%)</p></div>
+            <div class="result-card"><i class="fas fa-chart-pie"></i><h4>13</h4><p>BI дашбордов, 500+ метрик</p></div>
+            <div class="result-card"><i class="fas fa-arrow-trend-up"></i><h4>15%</h4><p>среднемесячный прирост выручки (2025)</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- УСЛУГИ / НАПРАВЛЕНИЯ (из резюме) -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Направления экспертизы</h2>
+        <div class="section-subtitle">Регулярный и антикризисный менеджмент, стратегия, построение отделов продаж, клиентского сервиса и контроля качества</div>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Регулярный менеджмент</h3><p>Внедрение KPI, SLA, регламентов, управленческого учёта. Системное управление для масштабирования.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-shield-virus"></i></div><h3>Антикризисный менеджмент</h3><p>Оптимизация затрат, финансовая стабилизация, реструктуризация, вывод из убытков.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-bullhorn"></i></div><h3>Коммерческая стратегия</h3><p>Разработка стратегии масштабирования, юнит-экономика, ценообразование, выход на рынки.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-people-arrows"></i></div><h3>Создание отделов продаж</h3><p>Формирование отдела с нуля, подбор, CRM, скрипты, мотивация и планы продаж.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-headset"></i></div><h3>Техподдержка & Аккаунтинг</h3><p>Организация клиентского сервиса по SLA, отдел аккаунтинга, LTV, CSAT, CRR.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-check-circle"></i></div><h3>Отдел контроля качества</h3><p>Разработка системы контроля, аудит, стандартизация, повышение удовлетворённости.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>BI-аналитика</h3><p>Внедрение 13 дашбордов, 500+ метрик для управления эффективностью и прогнозирования.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-graduation-cap"></i></div><h3>Обучение менеджменту и продажам</h3><p>Тренинги для команд, записи реальных занятий, повышение компетенций руководителей.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ОПЫТ РАБОТЫ (по резюме) -->
+<section id="experience" style="background-color: #fafdff;">
+    <div class="container">
+        <h2 class="section-title">Опыт работы — 11 лет 10 месяцев</h2>
+        <div class="section-subtitle">Коммерческий директор, бизнес-консультант, руководитель продаж в IT, EdTech, оптовой торговле и ритейле</div>
+        <div class="timeline">
+            <div class="job-item"><div class="job-header"><span class="job-title">Коммерческий директор (CCO)</span> <span class="job-date">Янв 2024 — Май 2026</span></div><div class="job-company">ООО «Кипкод» (IT / EdTech)</div><div class="job-desc">Структурировал коммерческое подразделение и клиентский сервис. Расширил штат до 43 чел. по SLA. Создал отделы аккаунтинга, контроля качества, реструктуризировал техподдержку, организовал отдел по работе с ключевыми партнерами. Внедрил CSAT, LTV, CRR → сократил отток на 75%. Снизил текучесть с 30% до 5%. Разработал 13 BI дашбордов (500+ метрик). Прирост выручки 2024→2023: 27%, 2025→2024: 32%.</div><div class="achievement-list"><span class="achievement-badge">Выручка 7,5 млрд ₽ (2025)</span><span class="achievement-badge">+15% среднемесячно в 2025</span><span class="achievement-badge">Система регулярного менеджмента</span></div></div>
+            <div class="job-item"><div class="job-header"><span class="job-title">Бизнес-консультант</span> <span class="job-date">Янв 2022 — Янв 2024</span></div><div class="job-company">Альтасеилс (консалтинг)</div><div class="job-desc">Консультирование 14 компаний (EdTech, опт, логистика, IT). Увеличил выручку клиентов на 20–67% за год. Разработал обучающие программы, внедрил CRM, стратегии выхода на рынок. Оптимизация структуры отделов продаж повысила эффективность команд на 25%.</div><div class="achievement-list"><span class="achievement-badge">Рост клиентской базы до 40%</span><span class="achievement-badge">KPI + системы мотивации</span></div></div>
+            <div class="job-item"><div class="job-header"><span class="job-title">Руководитель отдела продаж</span> <span class="job-date">Июл 2020 — Дек 2021</span></div><div class="job-company">ООО «ТД Сетевые Решения»</div><div class="job-desc">Организация отдела продаж «с нуля»: найм, обучение, скрипты, внедрение CRM. Расширил географию продаж, финансовый прирост компании — +230%.</div><div class="achievement-list"><span class="achievement-badge">+230% рост бизнеса</span><span class="achievement-badge">Система адаптации</span></div></div>
+            <div class="job-item"><div class="job-header"><span class="job-title">Руководитель группы продаж</span> <span class="job-date">Янв 2020 — Июл 2020</span></div><div class="job-company">Медиагруппа «Актион-МЦФЭР»</div><div class="job-desc">Управление колл-центром (10 менеджеров), аудиоконтроль, воронки, мотивация. Вывел отдел на кейсовые показатели после полугодового застоя.</div></div>
+            <div class="job-item"><div class="job-header"><span class="job-title">Коммерческий директор</span> <span class="job-date">Авг 2015 — Авг 2019</span></div><div class="job-company">ИП «Батманова С.Ф.» (YOTA)</div><div class="job-desc">Развитие бизнеса с нуля: открытие 10 ТТ, обучение команды до 42 чел., ежегодный прирост выручки минимум 10% в месяц. Управление полным циклом: закупки, инвентаризации, расчет ЗП, отчетность.</div><div class="achievement-list"><span class="achievement-badge">Штат 42 сотрудника</span><span class="achievement-badge">10 новых точек</span></div></div>
+        </div>
+        <div style="margin-top: 32px;"><div class="achievement-badge" style="background:#e5f2e5;"><i class="fas fa-chalkboard"></i> Провожу обучение продажам и управлению — по запросу предоставлю записи мастер-классов</div></div>
+    </div>
+</section>
+
+<!-- КОНТАКТЫ + ТЕЛЕГРАМ -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Свяжитесь со мной</h2>
+        <div class="section-subtitle">Готов обсудить стратегию, аудит отдела продаж или антикризисные меры</div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+7 (999) 088-25-52</span></div>
+                <div class="contact-detail"><i class="fab fa-telegram-plane"></i> <span>Telegram: <strong>@Skopylov_UpSale</strong></span></div>
+                <div class="contact-detail"><i class="fas fa-globe"></i> <span>telegram-канал: <a href="https://t.me/oshibka_vizhivshego" target="_blank" style="color:#1a5d7a;">@oshibka_vizhivshego</a> (менеджмент и продажи)</span></div>
+                <div class="tg-channel">
+                    <i class="fab fa-telegram"></i> <strong>Авторский Telegram-канал</strong><br>
+                    Делюсь инсайтами по управлению, продажам и системам. Подписывайтесь 👉 <a href="https://t.me/oshibka_vizhivshego" target="_blank" style="font-weight:600;">t.me/oshibka_vizhivshego</a>
+                </div>
+                <div style="margin-top: 24px;"><i class="fas fa-chart-simple"></i> Предпочитаемые сферы: IT-продукты, EdTech, оптовая торговля.</div>
+            </div>
+            <div class="contact-form">
+                <h3 style="margin-bottom: 20px;">Напишите мне</h3>
+                <form id="callbackForm">
+                    <div class="form-group"><input type="text" id="name" placeholder="Ваше имя *" required></div>
+                    <div class="form-group"><input type="email" id="email" placeholder="Email или Telegram *" required></div>
+                    <div class="form-group"><textarea rows="3" id="message" placeholder="Опишите задачу: масштабирование, структурирование отдела, антикризис, обучение..."></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Отправить запрос</button>
+                    <p style="font-size:0.7rem; margin-top:12px;">Я свяжусь с вами в течение 24 часов. Конфиденциально.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2023 Сергей Копылов — коммерческий директор, бизнес-консультант по регулярному менеджменту, антикризису и продажам.</p>
+        <p style="margin-top: 8px;">Разработка и внедрение коммерческой стратегии · Создание отделов продаж, техподдержки, аккаунтинга, контроля качества · BI-аналитика</p>
+    </div>
+</footer>
+
+<script>
+    // плавный скролл для навигации
+    document.querySelectorAll('.nav-links a, .hero-buttons a[href^="#"], .btn[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if (hash && hash !== '#' && hash.startsWith('#')) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+    // имитация отправки формы
+    const form = document.getElementById('callbackForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name')?.value.trim();
+            if (!name) {
+                alert('Пожалуйста, укажите ваше имя');
+                return;
+            }
+            alert(`Спасибо, ${name}! Сергей Копылов свяжется с вами в ближайшее время. А пока подписывайтесь на Telegram-канал @oshibka_vizhivshego.`);
+            form.reset();
+        });
+    }
+</script>
+</body>
+</html>
